@@ -1,5 +1,6 @@
 package com.liversportweb.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -50,6 +51,9 @@ public class UserEntity {
 	
 	@OneToMany(mappedBy="user")
 	private List<BookingEntity> bookingList;
+	
+	@OneToMany(mappedBy = "user")
+	private List<CommentEntity> comments = new ArrayList<>();
 	
 	public RoleEntity getRole() {
 		return role;
