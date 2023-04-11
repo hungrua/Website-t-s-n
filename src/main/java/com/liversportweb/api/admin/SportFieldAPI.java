@@ -19,22 +19,22 @@ public class SportFieldAPI {
 	
 	@Autowired
 	private ISportFieldService sportFieldService;
-	@GetMapping(value="/field-admin")
+	@GetMapping(value="/admin/field")
 	public List<SportFieldDTO> get(@RequestBody SportFieldDTO dto){
 		return sportFieldService.getByCondition( dto);
 	}
 	
-	@PostMapping(value ="/field-admin")
+	@PostMapping(value ="/admin/field")
 	public SportFieldDTO save( @RequestBody SportFieldDTO dto) {
 		return sportFieldService.save(dto);
 	}
-	@PutMapping(value="/field-admin/{id}")
+	@PutMapping(value="/admin/field/{id}")
 	public SportFieldDTO update(@RequestBody SportFieldDTO model, @PathVariable("id") long id ) {
 		model.setId(id);
 		return sportFieldService.save(model);
 	}
 	
-	@DeleteMapping(value="/field-admin")
+	@DeleteMapping(value="/admin/field")
 	public void delete(@RequestBody Long []ids) {
 		sportFieldService.delete(ids);
 	}

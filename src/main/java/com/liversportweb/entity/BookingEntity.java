@@ -10,7 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -25,13 +24,14 @@ public class BookingEntity {
 	
 	@Column(name="bookingTime")
 	private Time bookingTime;
-	
+	@Column(name="categoryId")
+	private Long categoryId;
 	@ManyToOne
 	@JoinColumn(name="user_id")
 	private UserEntity user;
 	
 	
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name="sport_field_id")
 	private SportFieldEntity sport_field_id;
 	

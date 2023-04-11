@@ -17,5 +17,4 @@ public class UserAPI {
 	public UserDTO doPost(@RequestBody UserDTO model) {
 		return userSerivce.save(model);
 	}
-	
 }

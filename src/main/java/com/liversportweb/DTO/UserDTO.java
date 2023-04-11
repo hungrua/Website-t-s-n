@@ -3,7 +3,7 @@ package com.liversportweb.DTO;
 public class UserDTO {
 	private Long id;
 	private Long roleId;
-	private String userName,password,fullName,email,district,city;
+	private String userName,password,fullName,email,district,city,image,phone;
 	public Long getId() {
 		return id;
 	}
@@ -51,6 +51,18 @@ public class UserDTO {
 	}
 	public void setRoleId(Long roleId) {
 		this.roleId = roleId;
+	}
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 	
 }

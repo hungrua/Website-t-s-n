@@ -1,5 +1,7 @@
 package com.liversportweb.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -46,8 +48,8 @@ public class SportFieldEntity {
 	@JoinColumn(name = "category_id")
 	private CategoryEntity category;
 	
-	@OneToOne(mappedBy="sport_field_id"	)
-	private BookingEntity booking;
+	@OneToMany(mappedBy="sport_field_id"	)
+	private List<BookingEntity> booking;
 	
 	
 	public CategoryEntity getCategory() {
@@ -114,11 +116,11 @@ public class SportFieldEntity {
 		this.city = city;
 	}
 
-	public BookingEntity getBooking() {
+	public List<BookingEntity> getBooking() {
 		return booking;
 	}
 
-	public void setBooking(BookingEntity booking) {
+	public void setBooking(List<BookingEntity> booking) {
 		this.booking = booking;
 	}
 

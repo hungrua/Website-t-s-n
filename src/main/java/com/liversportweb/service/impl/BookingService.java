@@ -1,7 +1,7 @@
 package com.liversportweb.service.impl;
 
-import java.sql.Date;
-import java.sql.Time;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,9 +31,10 @@ public class BookingService implements IBookingService {
 	
 	@Override
 	public BookingDTO save(BookingDTO dto)  {
-		Time time =  java.sql.Time.valueOf(dto.getBookingTime());
-		Date date =java.sql.Date.valueOf(dto.getBookingDate());
-		BookingEntity book = bookingRepository.findByBookingTimeAndBookingDate(time,date);
+//		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//		UserDetails userDetails = (UserDetails)authentication.getPrincipal();
+//		userDetails.getUsername();
+		BookingEntity book = bookingRepository.findByBookingTimeAndBookingDate(dto.getBookingTime(),dto.getBookingDate());
 //		if(!=null) return null;
 		if(book != null) {
 			return null;
@@ -53,16 +54,20 @@ public class BookingService implements IBookingService {
 	}
 
 	@Override
-	public void delete(Long [] ids) {
-		for(Long id : ids) {
+	public void delete(Long id) {
 			bookingRepository.delete(id);
-		}
 	}
 
 	@Override
 	public List<BookingDTO> getAllByUserName(String userName) {
-		// TODO Auto-generated method stub
-		return null;
+		List<BookingDTO> matches = new ArrayList<BookingDTO>();
+		List<BookingEntity> entities = new ArrayList<BookingEntity>();
+		entities = bookingRepository.findAllByUser(userRepository.findOneByUserName(userName));
+		for(BookingEntity x : entities) {
+			matches.add(bookingConverter.toDTO(x));
+		}
+		Collections.sort(matches);
+		return matches;
 	}
 
 	@Override

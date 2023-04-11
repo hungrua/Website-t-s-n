@@ -30,12 +30,20 @@ public class UserEntity {
 	@Column 
 	private String email;
 	
+	@Column
+	private String phone;
+	
 	@Column 
 	private String district;
 	
 	@Column 
 	private String city;
 	
+	@Column
+	private String image;
+	
+
+
 	@ManyToOne
 	@JoinColumn(name="role_code")
 	private RoleEntity role ;
@@ -90,6 +98,15 @@ public class UserEntity {
 	public void setFullname(String fullname) {
 		this.fullname = fullname;
 	}
+	
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 
 	public String getEmail() {
 		return email;
@@ -114,6 +131,12 @@ public class UserEntity {
 	public void setCity(String city) {
 		this.city = city;
 	}
-	
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
 	
 }

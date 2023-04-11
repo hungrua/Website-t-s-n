@@ -16,6 +16,8 @@ public class UserConverter {
 		result.setFullname(model.getFullName());
 		result.setDistrict(model.getDistrict());
 		result.setCity(model.getCity());
+		result.setImage(model.getImage());
+		result.setPhone(model.getPhone());
 		return result;
 	}
 	public UserDTO toDTO(UserEntity entity) {
@@ -31,6 +33,8 @@ public class UserConverter {
 		result.setFullName(entity.getFullname());
 		result.setDistrict(entity.getDistrict());
 		result.setCity(entity.getCity());
+		result.setImage(entity.getImage());
+		result.setPhone(entity.getPhone());
 		return result;
 	}
 	public UserEntity toEntity(UserDTO model, UserEntity entity) {
@@ -40,6 +44,8 @@ public class UserConverter {
 		entity.setFullname(model.getFullName());
 		entity.setDistrict(model.getDistrict());
 		entity.setCity(model.getCity());
+		entity.setImage(model.getImage());
+		entity.setPhone(model.getPhone());
 		return entity;
 	}
 }

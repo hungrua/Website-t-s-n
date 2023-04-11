@@ -29,12 +29,13 @@ public class CustomUserDetailService implements UserDetailsService {
 		UserEntity entity = userRepository.findOneByUserName(username);
 		if(entity!=null) {
 			UserDTO user = userConverter.toDTO(entity);
+			String role = user.getRoleId()==1?"USER":"ADMIN";
 			List<GrantedAuthority> grandList = new ArrayList<GrantedAuthority>();
-			GrantedAuthority authority = new SimpleGrantedAuthority("ADMIN");
+			GrantedAuthority authority = new SimpleGrantedAuthority(role);
 			grandList.add(authority);
 			
-			UserDetails userDetails = new User(username, user.getPassword(), grandList);
-			return userDetails;
+			UserDetails myUser = (UserDetails)new User(username,user.getPassword(),grandList);
+			return myUser;
 		}
 		else {
 			new UsernameNotFoundException("Can not Login");

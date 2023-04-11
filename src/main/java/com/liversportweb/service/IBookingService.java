@@ -6,7 +6,7 @@ import com.liversportweb.DTO.BookingDTO;
 
 public interface IBookingService {
 	BookingDTO save(BookingDTO dto);
-	void delete(Long [] ids);
+	void delete(Long id);
 	List<BookingDTO> getAllByUserName(String userName);
 	List<BookingDTO> getAllByCategory(Long id);
 	

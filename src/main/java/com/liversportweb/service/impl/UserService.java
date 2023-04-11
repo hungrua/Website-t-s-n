@@ -33,5 +33,10 @@ public class UserService implements IUserService {
 		entity = userRepository.save(entity);
 		return userConverter.toDTO(entity);
 	}
+
+	@Override
+	public UserDTO getUser(String userName) {
+		return userConverter.toDTO(userRepository.findOneByUserName(userName));
+	}
 	
 }

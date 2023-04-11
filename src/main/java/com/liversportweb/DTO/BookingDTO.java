@@ -1,8 +1,12 @@
 package com.liversportweb.DTO;
 
-public class BookingDTO {
-	private Long id, sportFieldId,userId;
-	private String bookingDate, bookingTime;
+import java.sql.Date;
+import java.sql.Time;
+
+public class BookingDTO implements Comparable<BookingDTO> {
+	private Long id, sportFieldId,userId,categoryId;
+	private Date bookingDate;
+	private Time bookingTime;
 	private Long price;
 	private String sportFieldName;
 	private String userName;
@@ -20,10 +24,10 @@ public class BookingDTO {
 	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
-	public String getBookingTime() {
+	public Time getBookingTime() {
 		return bookingTime;
 	}
-	public void setBookingTime(String bookingTime) {
+	public void setBookingTime(Time bookingTime) {
 		this.bookingTime = bookingTime;
 	}
 	public Long getPrice() {
@@ -50,12 +54,26 @@ public class BookingDTO {
 	public void setSportFieldId(Long sportFieldId) {
 		this.sportFieldId = sportFieldId;
 	}
-	public String getBookingDate() {
+	public Date getBookingDate() {
 		return bookingDate;
 	}
-	public void setBookingDate(String bookingDate) {
+	public void setBookingDate(Date bookingDate) {
 		this.bookingDate = bookingDate;
 	}
-	
-	
+	public Long getCategoryId() {
+		return categoryId;
+	}
+	public void setCategoryId(Long categoryId) {
+		this.categoryId = categoryId;
+	}
+	@Override
+	public int compareTo(BookingDTO o) {
+		if(this.bookingDate.after(o.bookingDate)) return 1;
+		else if(this.bookingDate.equals(o.getBookingDate())) {
+			if(this.bookingTime.before(o.bookingTime)) return 1;
+			else return -1;
+		}
+		else return -1;
+	}
+		
 }

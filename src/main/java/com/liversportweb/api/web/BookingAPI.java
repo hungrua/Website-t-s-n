@@ -18,22 +18,16 @@ public class BookingAPI {
 	private IBookingService bookingService;
 	
 	
-	
-	@PostMapping(value="/bookings-user")
+	@PostMapping(value="/user/bookings")
 	public BookingDTO save(@RequestBody BookingDTO model) {
 		BookingDTO book = bookingService.save(model);
 		return book;
 	}
 	
-	@PutMapping(value="/bookings-user/{id}")
+	@PutMapping(value="/user/bookings/{id}")
 	public BookingDTO update(@RequestBody BookingDTO model, @PathVariable("id") long id)  {
 		model.setId(id);
 		return bookingService.save(model);
-	}
-	
-	@DeleteMapping(value="/bookings-user")
-	public void delete(@RequestBody Long [] ids) {
-		bookingService.delete(ids);
 	}
 	
 }

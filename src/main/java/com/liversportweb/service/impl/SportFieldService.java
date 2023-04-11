@@ -65,6 +65,7 @@ public class SportFieldService implements ISportFieldService {
 		List<SportFieldDTO> result = new ArrayList<>();
 		List<SportFieldEntity> list = new ArrayList<SportFieldEntity>();
 		if(city==null && district==null) {
+			
 			list = sportFieldRepository.findAllByCategory_id(category_id);
 		}
 		else if(district==null) {

@@ -10,21 +10,21 @@ import org.springframework.web.bind.annotation.RestController;
 import com.liversportweb.DTO.BookingDTO;
 import com.liversportweb.service.IBookingService;
 
-@RestController(value="admin-booking")
+@RestController
 public class BookingAPI {
 	
 	@Autowired
 	private IBookingService bookingService;
 	
-	@PutMapping(value="/bookings/{id}")
+	@PutMapping(value="/admin/bookings/{id}")
 	public BookingDTO update(@RequestBody BookingDTO model, @PathVariable("id") long id)  {
 		model.setId(id);
 		return bookingService.save(model);
 	}
 	
-	@DeleteMapping(value="/bookings")
-	public void delete(@RequestBody Long [] ids) {
-		bookingService.delete(ids);
+	@DeleteMapping(value="/admin/bookings")
+	public void delete(@RequestBody Long id) {
+		bookingService.delete(id);
 	}
 	
 }

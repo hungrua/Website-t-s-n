@@ -19,28 +19,23 @@ public class SportFieldAPI {
 	
 	@Autowired
 	private ISportFieldService sportFieldService;
-	
-	@GetMapping(value="/field-user/{id}")
+	@GetMapping(value="/user/field/{id}")
 	public SportFieldDTO findOne(@PathVariable("id") String id) {
 		return sportFieldService.findOneById(Long.parseLong(id));
 	}
-	@PostMapping(value="/field-user")
+	@PostMapping(value="/user/field")
 	public List<SportFieldDTO> get(@RequestBody SportFieldDTO dto){
-		List<SportFieldDTO> list = sportFieldService.getByCondition( dto);
+		List<SportFieldDTO> list = sportFieldService.getByCondition(dto);
 		return list;
 	}
 	
-//	@PostMapping(value ="/field-user")
-//	public SportFieldDTO save( @RequestBody SportFieldDTO dto) {
-//		return sportFieldService.save(dto);
-//	}
-	@PutMapping(value="/field-user/{id}")
+	@PutMapping(value="/user/field/{id}")
 	public SportFieldDTO update(@RequestBody SportFieldDTO model, @PathVariable("id") long id ) {
 		model.setId(id);
 		return sportFieldService.save(model);
 	}
 	
-	@DeleteMapping(value="/field-user")
+	@DeleteMapping(value="/user/field")
 	public void delete(@RequestBody Long []ids) {
 		sportFieldService.delete(ids);
 	}
