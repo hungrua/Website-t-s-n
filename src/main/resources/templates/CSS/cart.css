@@ -55,8 +55,6 @@
 #myDate{
     box-sizing: border-box;
     padding: 0 10px;
-    display: flex;
-    align-items: center;
 }
 .match-row{
     display: block;

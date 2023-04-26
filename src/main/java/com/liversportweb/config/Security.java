@@ -9,6 +9,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.authentication.rememberme.InMemoryTokenRepositoryImpl;
+import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 
 import com.liversportweb.javainuse.UserAuthenticationSuccessHandler;
 @Configuration
@@ -19,8 +21,7 @@ public class Security extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(HttpSecurity http) throws Exception{
 		http.csrf().disable();
-		http.authorizeRequests().antMatchers("/","/login","/booking","/user/bookings","/user/add","/register").permitAll();
-		
+		http.authorizeRequests().antMatchers("/","/login","/booking","/user/bookings").permitAll();
 		http.authorizeRequests().antMatchers("/admin/**").hasAuthority("ADMIN");
 		http.authorizeRequests().antMatchers("/user/**","/booking","/sport_field","/user/field/**","/yourMatch","user/information/editPage").hasAuthority("USER");
 		
@@ -32,7 +33,15 @@ public class Security extends WebSecurityConfigurerAdapter{
 		.usernameParameter("username")
 		.passwordParameter("password");
 		
+		http.authorizeRequests().and()
+		.rememberMe().tokenRepository(this.persistentTokenRepository())
+		.tokenValiditySeconds(24*60*60);
 	}
+	 @Bean
+	    public PersistentTokenRepository persistentTokenRepository() {
+	        InMemoryTokenRepositoryImpl memory = new InMemoryTokenRepositoryImpl();
+	        return memory;
+	    }
 	 @Bean
 	    public BCryptPasswordEncoder passwordEncoder() {
 	        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();

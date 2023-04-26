@@ -29,8 +29,29 @@
         <input type="submit" value=" Login " id="submit-btn"></input>
         <div class="newAccount">
             Don't have an account?
-            <a id="register" th:href="@{/register}">Register</a>
+            <span id="register"> Register </span>
         </div>
+    </form>
+    <form action="" id="sign-up">
+        <h2>Register</h2>
+        <div class="form-floating mb-3">
+            <input type="userName" class="form-control" id="floatingUserName" placeholder="userName"  th:required="required" ></input>
+            <label for="floatingUserName">User Name</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingEmail" placeholder="Email" th:required="required" ></input>
+            <label for="floatingEmail">Email</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" th:required="required" ></input>
+            <label for="floatingPassword">Password</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPasswordConfirm" placeholder="Password" th:required="required" ></input>
+            <label for="floatingPasswordConfirm">Confirm your password</label>
+        </div>
+        <button id="create-acc">Create account</button>
+        <span id="return-login">Back to sign in</span>
     </form>
 
     <script>
@@ -40,8 +61,7 @@
         if(message!=null){
             $(".alert").text("Tài khoản hoặc mật khẩu không đúng")
             $(".alert").show()
-        }
-
+        } 
 
 
     </script>

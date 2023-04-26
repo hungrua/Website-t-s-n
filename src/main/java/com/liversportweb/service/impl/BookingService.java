@@ -31,9 +31,13 @@ public class BookingService implements IBookingService {
 	
 	@Override
 	public BookingDTO save(BookingDTO dto)  {
+//		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//		UserDetails userDetails = (UserDetails)authentication.getPrincipal();
+//		userDetails.getUsername();
 		BookingEntity book = bookingRepository.findByBookingTimeAndBookingDate(dto.getBookingTime(),dto.getBookingDate());
+//		if(!=null) return null;
 		if(book != null) {
-			return new BookingDTO();
+			return null;
 		}
 		else {
 			BookingEntity entity = new BookingEntity();
@@ -71,16 +75,5 @@ public class BookingService implements IBookingService {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	public List<BookingDTO> getAllMatchBySportField( Long id) {
-		List<BookingDTO> result = new ArrayList<BookingDTO>();
-		List<BookingEntity> matches = bookingRepository.findAllByMySportField(id);
-		for(BookingEntity x : matches) {
-			result.add(bookingConverter.toDTO(x));
-		}
-		Collections.sort(result);
-		return result;
-	}
-
 
 }

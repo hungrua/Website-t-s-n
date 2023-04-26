@@ -13,9 +13,9 @@ public class AdminAPI {
 	@Autowired
 	private IUserService userSerivce;
 	
-//	@PostMapping(value="/admin")
-//	public UserDTO doPost(@RequestBody UserDTO model) {
-//		return userSerivce.save(model);
-//	}
+	@PostMapping(value="/admin")
+	public UserDTO doPost(@RequestBody UserDTO model) {
+		return userSerivce.save(model);
+	}
 	
 }

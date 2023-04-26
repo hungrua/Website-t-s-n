@@ -35,14 +35,7 @@
                         <li class="nav-item" style="display:flex;align-items: center;"><a class="nav-link" href="#feedback">Feedback</a></li>
                         <li th:if="${user == null}" class="nav-item" style="display:flex;align-items: center;"><a class="nav-link" id="login-tag" th:href="@{/login}">Login</a></li>
                         <li th:if="${user != null}" class="nav-item" style="display:flex;align-items: center;"><a class="nav-link" id="greeting-tag" th:text="${greeting}" ></a></li>
-                        <li class="nav-item" style="padding: 0 10px;">
-							<a th:href="@{/user/information}">
-								<img
-									th:if="${user != null}"
-									th:src="@{'/templates/image/avatar/' +${user.image}}"
-									style="width: 40px; height: 40px; border-radius: 50%; border: 1px solid aliceblue;object-fit: cover;" />
-							</a>
-						</li>
+                        <li> <img th:if="${user != null}" th:src="@{'/templates/image/avatar/' +${img}}"  style="width:40px;height:40px;border-radius: 50%;border: 1px solid aliceblue;object-fit: cover;"/></li>
                         <li th:if="${user != null}" class="nav-item" style="display:flex;align-items: center;">
                             <a class="nav-link" th:href="@{/}">
                                 <i class="fa-solid fa-right-from-bracket">

@@ -9,6 +9,5 @@ public interface IBookingService {
 	void delete(Long id);
 	List<BookingDTO> getAllByUserName(String userName);
 	List<BookingDTO> getAllByCategory(Long id);
-	List<BookingDTO> getAllMatchBySportField(Long id);
 	
 }

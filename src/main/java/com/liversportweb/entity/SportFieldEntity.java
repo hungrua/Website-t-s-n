@@ -11,7 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -50,9 +49,10 @@ public class SportFieldEntity {
 	@JoinColumn(name = "category_id")
 	private CategoryEntity category;
 	
-	@OneToMany(mappedBy="sport_field_id")
+	@OneToMany(mappedBy="sport_field_id"	)
 	private List<BookingEntity> booking;
 	
+<<<<<<< HEAD
 <<<<<<< HEAD
 	@OneToMany(mappedBy = "sportField")
 	private List<CommentEntity> commentList;
@@ -64,6 +64,8 @@ public class SportFieldEntity {
 	@OneToMany(mappedBy = "spottField")
 	private List<CommentEntity> comments = new ArrayList<>();
 >>>>>>> 56914b6e1a73aae1a48292180d0540c59fca59a1
+=======
+>>>>>>> parent of 97e4850 (new)
 	
 	public CategoryEntity getCategory() {
 		return category;
@@ -137,15 +139,6 @@ public class SportFieldEntity {
 		this.booking = booking;
 	}
 
-	
-	public List<CommentEntity> getCommentList() {
-		return commentList;
-	}
-
-	public void setCommentList(List<CommentEntity> commentList) {
-		this.commentList = commentList;
-	}
-
 	public String getAddress() {
 		return address;
 	}
@@ -161,6 +154,7 @@ public class SportFieldEntity {
 	public void setImage(String image) {
 		this.image = image;
 	}
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 	public UserEntity getOwner() {
@@ -170,6 +164,8 @@ public class SportFieldEntity {
 	public void setOwner(UserEntity owner) {
 		this.owner = owner;
 	}
+=======
+>>>>>>> parent of 97e4850 (new)
 	
 =======
 	public List<CommentEntity> getComments() {
