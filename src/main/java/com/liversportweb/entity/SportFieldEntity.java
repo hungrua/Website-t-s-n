@@ -1,5 +1,6 @@
 package com.liversportweb.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -52,12 +53,17 @@ public class SportFieldEntity {
 	@OneToMany(mappedBy="sport_field_id")
 	private List<BookingEntity> booking;
 	
+<<<<<<< HEAD
 	@OneToMany(mappedBy = "sportField")
 	private List<CommentEntity> commentList;
 	
 	@OneToOne(mappedBy="mySportFieldEntity")
 	private UserEntity owner;
 	
+=======
+	@OneToMany(mappedBy = "spottField")
+	private List<CommentEntity> comments = new ArrayList<>();
+>>>>>>> 56914b6e1a73aae1a48292180d0540c59fca59a1
 	
 	public CategoryEntity getCategory() {
 		return category;
@@ -156,6 +162,7 @@ public class SportFieldEntity {
 		this.image = image;
 	}
 
+<<<<<<< HEAD
 	public UserEntity getOwner() {
 		return owner;
 	}
@@ -164,5 +171,14 @@ public class SportFieldEntity {
 		this.owner = owner;
 	}
 	
+=======
+	public List<CommentEntity> getComments() {
+		return comments;
+	}
+
+	public void setComments(List<CommentEntity> comments) {
+		this.comments = comments;
+	}
+>>>>>>> 56914b6e1a73aae1a48292180d0540c59fca59a1
 	
 }

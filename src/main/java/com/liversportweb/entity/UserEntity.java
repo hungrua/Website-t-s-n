@@ -1,5 +1,6 @@
 package com.liversportweb.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -56,6 +57,7 @@ public class UserEntity {
 	private List<BookingEntity> bookingList;
 	
 	@OneToMany(mappedBy = "user")
+<<<<<<< HEAD
 	private List<CommentEntity> commentList;
 	
 	@OneToOne
@@ -64,6 +66,9 @@ public class UserEntity {
 	
 	
 	
+=======
+	private List<CommentEntity> comments = new ArrayList<>();
+>>>>>>> 56914b6e1a73aae1a48292180d0540c59fca59a1
 	
 	public RoleEntity getRole() {
 		return role;
