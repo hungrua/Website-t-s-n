@@ -3,6 +3,7 @@ package com.liversportweb.service;
 import com.liversportweb.DTO.UserDTO;
 
 public interface IUserService {
-	UserDTO save(UserDTO userDTO);
+	String save(UserDTO userDTO);
 	UserDTO getUser(String userName);
+	UserDTO edit(UserDTO userDTO, Long id);
 }

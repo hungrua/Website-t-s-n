@@ -2,8 +2,9 @@ package com.liversportweb.DTO;
 
 public class UserDTO {
 	private Long id;
-	private Long roleId;
+	private Long roleId, mySportField;
 	private String userName,password,fullName,email,district,city,image,phone;
+	private Integer firstLogin;
 	public Long getId() {
 		return id;
 	}
@@ -63,6 +64,18 @@ public class UserDTO {
 	}
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+	public int isFirstLogin() {
+		return firstLogin;
+	}
+	public void setFirstLogin(int firstLogin) {
+		this.firstLogin = firstLogin;
+	}
+	public Long getMySportField() {
+		return mySportField;
+	}
+	public void setMySportField(Long mySportField) {
+		this.mySportField = mySportField;
 	}
 	
 }

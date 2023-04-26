@@ -75,3 +75,21 @@ body {
     margin-left: 50%;
     transform: translateX(-18%);
 }
+.adminInfoNav{
+    position: absolute !important;
+    top: 0 !important;
+    width: 100% !important;
+}
+.admin-container{
+    margin-top: 25px;
+    margin-bottom: 70px;
+}
+#adminInfoHeader{
+    margin-top:35px;
+    text-align: center;
+}
+.card-admin{
+    padding: 10px;
+    box-sizing: border-box;
+    border: solid 5px green;
+}

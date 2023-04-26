@@ -93,15 +93,15 @@
 					</ol>
 					<div class="carousel-inner" role="listbox">
 						<div class="carousel-item active slider">
-							<img class="d-block img-fluid" src="/templates/image/slider4.png"
+							<img class="d-block img-fluid" style="object-position: top center;" src="/templates/image/slider5.png"
 								alt="First slide" />
 						</div>
 						<div class="carousel-item slider">
-							<img class="d-block img-fluid" src="/templates/image/caulong.png"
+							<img class="d-block img-fluid"  style="object-fit: fill;" src="/templates/image/badminton.jpg"
 								alt="Second slide" />
 						</div>
 						<div class="carousel-item slider">
-							<img class="d-block img-fluid" src="/templates/image/tennis.png"
+							<img class="d-block img-fluid" style="object-position: top;" src="/templates/image/tennis2.jpg"
 								alt="Third slide" />
 						</div>
 					</div>
@@ -118,9 +118,9 @@
 				<div class="search">
 					<div class="chose">
 						<select id="cities" onchange="getValueForSecondInput()">
-							<option value="">--Thành phố--</option>
-							<option value="HaNoi">Hà Nội</option>
-							<option value="TPHoChiMinh">Thành phố Hồ Chí Minh</option>
+							<option value="--Thành phố--">--Thành phố--</option>
+							<option value="Hà Nội">Hà Nội</option>
+							<option value="Thành phố Hồ Chí Minh">Thành phố Hồ Chí Minh</option>
 						</select>
 					</div>
 					<div class="chose">
@@ -173,54 +173,54 @@
       //   // Set the value for Seclector
 
       function getValueForSecondInput() {
-        var options = {
-              '--Thành phố--':{
-                '--Quận huyện--' : ""
-              },
-              'HaNoi': {
-                  '--Quận huyện--' : "", 
-                  'Ba Đình': "BaDinh",
-                  'Bắc Từ Liêm': "BacTuLiem",
-                  'Cầu Giấy': "CauGiay",
-                  'Đống Đa': "DongDa",
-                  'Hà Đông': "HaDong",
-                  'Hai Bà Trưng': "HaiBaTrung",
-                  'Hoàn Kiếm':'HoanKiem',
-                  'Hoàng Mai': 'HoangMai',
-                  'Long Biên': 'LongBien',
-                  'Nam Từ Liêm' :'NamTuLiem',
-                  'Tây Hồ' : 'TayHo',
-                  'Thanh Xuân': 'ThanhXuan'
-              },
-              'TPHoChiMinh': {
-                  '--Quận huyện--' : "",
-                  "Bình Chánh": 'BinhChanh',
-                  "Bình Tân" : 'BinhTan',
-                  "Bình Thạnh" :'BinhThanh',
-                  "Cần Giờ": 'CanGio',
-                  "Củ Chi" : 'CuChi',
-                  "Quận 1" : 'Quan1',
-                  "Quận 2" : 'Quan2',
-                  "Quận 3": 'Quan3',
-                  "Quận 4": 'Quan4',
-                  "Quận 5": 'Quan5',
-                  "Quận 6": 'Quan6',
-                  "Quận 7": 'Quan7',
-                  "Quận 8": 'Quan8',
-                  "Quận 9": 'Quan9',
-                  "Quận 10": 'Quan10',
-                  "Quận 11": 'Quan11',
-                  "Quận 12": 'Quan12',
-                  "Gò Vấp": 'GoVap',
-                  "Hóc Môn":'HocMon',
-                  "Nhà Bè" :'NhaBe',
-                  "Phú Nhuận" : 'PhuNhuan',
-                  "Tân Bình" :'TanBinh',
-                  "Tân Phú" :'TanPhu',
-                  "Thủ Đức" : 'ThuDuc'
-              }
-            
-          };
+    	  var options = {
+                  '--Thành phố--':{
+                    '--Quận huyện--' : ""
+                  },
+                  'Hà Nội': {
+                      '--Quận huyện--' : "", 
+                      'Ba Đình': "Ba Đình",
+                      'Bắc Từ Liêm': "Bắc Từ Liêm",
+                      'Cầu Giấy': "Cầu Giấy",
+                      'Đống Đa': "Đống Đa",
+                      'Hà Đông': "Hà Đông",
+                      'Hai Bà Trưng': "Hai Bà Trưng",
+                      'Hoàn Kiếm':'Hoàn Kiếm',
+                      'Hoàng Mai': 'Hoàng Mai',
+                      'Long Biên': 'Long Biên',
+                      'Nam Từ Liêm' :'Nam Từ Liêm',
+                      'Tây Hồ' : 'Tây Hồ',
+                      'Thanh Xuân': 'Thanh Xuân'
+                  },
+                  'Thành phố Hồ Chí Minh': {
+                      '--Quận huyện--' : "",
+                      "Bình Chánh": 'Bình Chánh',
+                      "Bình Tân" : 'Bình Tân',
+                      "Bình Thạnh" :'Bình Thạnh',
+                      "Cần Giờ": 'Cần Giờ',
+                      "Củ Chi" : 'Củ Chi',
+                      "Quận 1" : 'Quận 1',
+                      "Quận 2" : 'Quận 2',
+                      "Quận 3": 'Quận 3',
+                      "Quận 4": 'Quận 4',
+                      "Quận 5": 'Quận 5',
+                      "Quận 6": 'Quận 6',
+                      "Quận 7": 'Quận 7',
+                      "Quận 8": 'Quận 8',
+                      "Quận 9": 'Quận 9',
+                      "Quận 10": 'Quận 10',
+                      "Quận 11": 'Quận 11',
+                      "Quận 12": 'Quận 12',
+                      "Gò Vấp": 'Gò Vấp',
+                      "Hóc Môn":'Hóc Môn',
+                      "Nhà Bè" :'Nhà Bè',
+                      "Phú Nhuận" : 'Phú Nhuận',
+                      "Tân Bình" :'Tân Bình',
+                      "Tân Phú" :'Tân Phú',
+                      "Thủ Đức" : 'Thủ Đức'
+                  }
+                
+              };
         var select1Value = $('#cities').val();
         var select2Options = options[select1Value];
         // console.log(select2Options)
@@ -238,7 +238,7 @@
   function searchByConditions(){
     var test = $('#name').val() ;
     let GetObject = {
-          'city' : $('#cities').val()!= "" ? $('#cities').val() : null,
+          'city' : $('#cities').val()!= "--Thành phố--" ? $('#cities').val() : null,
           'district':$('#district').val()!= "" ? $('#district').val() : null,
           'categoryId':  parseInt($('#category').val()),
           'name': test
@@ -276,7 +276,9 @@
       dataType: "json",
       data : JSON.stringify(data),
       success: function(result){
-        if(result!={}){
+		console.log(result)
+		console.log(typeof result)
+        if(result.length !=0){
           $.each(result,function(index,value){
             let typeSportField ;
             if(value.categoryId == 1) typeSportField = "sanbong";
@@ -288,7 +290,7 @@
                   <img class="card-img-top sport_field_image" style="height: 40%" src="/templates/image/${typeSportField}/${value.image}" alt=""/>
                   <div class="card-body card-bodyp">
                     <h4 class="card-title card-title-p">
-                      <a onclick="gotoSportField(${value.id})"  title="Sân bóng ${value.name} "> Sân bóng ${value.name}</a>
+                      <a onclick="gotoSportField(${value.id})"  title="Sân ${value.name} "> Sân ${value.name}</a>
                     </h4>
                     <div class="addres"><span class="info-title">Địa chỉ :</span><span class="sf-info">${value.address}</span></div>
                     <div class="price"><span class="info-title">Giá tham khảo :</span> <span class="sf-info price-info"> ${value.price} vnđ/ trận </span></div>
@@ -300,7 +302,6 @@
                 </div>
               </div>`
             );
-            console.log(value)
           });
         }
         else alert("Sân bạn tìm không có trong hệ thống")

@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -48,8 +49,14 @@ public class SportFieldEntity {
 	@JoinColumn(name = "category_id")
 	private CategoryEntity category;
 	
-	@OneToMany(mappedBy="sport_field_id"	)
+	@OneToMany(mappedBy="sport_field_id")
 	private List<BookingEntity> booking;
+	
+	@OneToMany(mappedBy = "sportField")
+	private List<CommentEntity> commentList;
+	
+	@OneToOne(mappedBy="mySportFieldEntity")
+	private UserEntity owner;
 	
 	
 	public CategoryEntity getCategory() {
@@ -124,6 +131,15 @@ public class SportFieldEntity {
 		this.booking = booking;
 	}
 
+	
+	public List<CommentEntity> getCommentList() {
+		return commentList;
+	}
+
+	public void setCommentList(List<CommentEntity> commentList) {
+		this.commentList = commentList;
+	}
+
 	public String getAddress() {
 		return address;
 	}
@@ -138,6 +154,14 @@ public class SportFieldEntity {
 
 	public void setImage(String image) {
 		this.image = image;
+	}
+
+	public UserEntity getOwner() {
+		return owner;
+	}
+
+	public void setOwner(UserEntity owner) {
+		this.owner = owner;
 	}
 	
 	

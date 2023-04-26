@@ -37,7 +37,11 @@ public class HomeController {
 	}
 	@GetMapping("/login")
 	public String login() {
-       return "login";  
+		return "login";  
+    }
+	@GetMapping("/register")
+	public String register() {
+       return "register";  
     }
 	@GetMapping("/booking")
     public String booking(Model model, Principal principal) {

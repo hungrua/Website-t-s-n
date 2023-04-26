@@ -5,8 +5,9 @@
     padding: 20px;
     box-sizing: border-box;
 }
-.con2{
-    margin-top:82px !important;
+.container2{
+    display: flex !important;
+    padding: 0 30px !important
 }
 input{
     margin:10px 0;
@@ -28,6 +29,11 @@ input{
     color : white;
     background-color: #f4623a;
 }
+#comment{
+    flex-grow: 1;
+    padding: 0 20px;
+    margin-bottom: 0 !important;
+}
 .comment{
     overflow-y: scroll;
     overflow-x: hidden;
@@ -36,4 +42,65 @@ input{
 }
 .rules{
     font-size: larger;
+}
+.userComment{
+    padding : 10px 0;
+}
+.commenterInfo{
+    display: flex !important;
+}
+.commentDate{
+    flex-grow: 1;
+    text-align: right;
+    font-weight: 100;
+}
+.commentAction{
+    display: flex;
+    justify-content: flex-end;
+}
+.commentAction button{
+    padding: 0 10px;
+    border: 0;
+    background-color: transparent;
+}
+.commentAction .btn-edit:hover{
+    color: rgb(36, 161, 36);
+    text-decoration: underline;
+}
+.commentAction .btn-delete:hover{
+    color: red;
+    text-decoration: underline;
+}
+.commentContent{
+    box-sizing: border-box;
+    padding : 5px 0
+}
+.editedContent{
+    display: none;
+    position: relative;
+}
+.changeComment{
+    background-color: transparent;
+    border: none;
+    position: absolute ;
+    right: 10px;
+    bottom: 0;
+}
+.editArea{
+    padding: 0;
+}
+.sportFieldInfo{
+    display: flex;
+    padding:0
+}
+#sportFieldImage{
+    width: 100%;
+}
+.form{
+    margin:0 !important;
+    box-sizing: border-box;
+    padding: 0  20px
+}
+#description{
+    width: 131% !important;
 }

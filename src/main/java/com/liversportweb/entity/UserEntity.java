@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 @Entity
 @Table (name="user")
@@ -42,6 +43,9 @@ public class UserEntity {
 	@Column
 	private String image;
 	
+	@Column(name="first_Login")
+	private int firstLogin;
+	
 
 
 	@ManyToOne
@@ -50,6 +54,16 @@ public class UserEntity {
 	
 	@OneToMany(mappedBy="user")
 	private List<BookingEntity> bookingList;
+	
+	@OneToMany(mappedBy = "user")
+	private List<CommentEntity> commentList;
+	
+	@OneToOne
+	@JoinColumn(name="mySportField")
+	private SportFieldEntity mySportFieldEntity;
+	
+	
+	
 	
 	public RoleEntity getRole() {
 		return role;
@@ -65,6 +79,16 @@ public class UserEntity {
 
 	public void setBookingList(List<BookingEntity> bookingList) {
 		this.bookingList = bookingList;
+	}
+	
+	
+
+	public List<CommentEntity> getCommentList() {
+		return commentList;
+	}
+
+	public void setCommentList(List<CommentEntity> commentList) {
+		this.commentList = commentList;
 	}
 
 	public Long getId() {
@@ -138,5 +162,26 @@ public class UserEntity {
 	public void setImage(String image) {
 		this.image = image;
 	}
+
+	public int isFirstLogin() {
+		return firstLogin;
+	}
+
+	public void setFirstLogin(int firstLogin) {
+		this.firstLogin = firstLogin;
+	}
+
+	public SportFieldEntity getMySportFieldEntity() {
+		return mySportFieldEntity;
+	}
+
+	public void setMySportFieldEntity(SportFieldEntity mySportFieldEntity) {
+		this.mySportFieldEntity = mySportFieldEntity;
+	}
+
+	public int getFirstLogin() {
+		return firstLogin;
+	}
+	
 	
 }

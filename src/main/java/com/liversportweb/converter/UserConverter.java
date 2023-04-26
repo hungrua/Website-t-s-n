@@ -9,15 +9,16 @@ import com.liversportweb.entity.UserEntity;
 public class UserConverter {
 	public UserEntity toEntity(UserDTO model) {
 		UserEntity result = new UserEntity();
-		result.setId(model.getId());
+//		result.setId(model.getId());
 		result.setUserName(model.getUserName());
 		result.setPassword(model.getPassword());
 		result.setEmail(model.getEmail());
 		result.setFullname(model.getFullName());
 		result.setDistrict(model.getDistrict());
 		result.setCity(model.getCity());
-		result.setImage(model.getImage());
+		result.setImage("default.png");
 		result.setPhone(model.getPhone());
+		result.setFirstLogin(1);
 		return result;
 	}
 	public UserDTO toDTO(UserEntity entity) {
@@ -35,6 +36,8 @@ public class UserConverter {
 		result.setCity(entity.getCity());
 		result.setImage(entity.getImage());
 		result.setPhone(entity.getPhone());
+		result.setFirstLogin(entity.isFirstLogin());
+		if(entity.getMySportFieldEntity()!=null) result.setMySportField(entity.getMySportFieldEntity().getId());
 		return result;
 	}
 	public UserEntity toEntity(UserDTO model, UserEntity entity) {
@@ -46,6 +49,7 @@ public class UserConverter {
 		entity.setCity(model.getCity());
 		entity.setImage(model.getImage());
 		entity.setPhone(model.getPhone());
+		entity.setFirstLogin(0);
 		return entity;
 	}
 }
